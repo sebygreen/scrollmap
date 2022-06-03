@@ -1,0 +1,70 @@
+.content {
+    margin: 15px 0 0 0;
+    display: flex;
+}
+
+.text {
+}
+
+.text h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.webmaster p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.credits {
+    margin: 10px 0 0 0;
+}
+
+.container {
+    display: flex;
+}
+
+.credit {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    text-align: center;
+}
+
+.credit:not(:last-child) {
+    margin: 0 10px 0 0;
+}
+
+.credit p {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.credit p a {
+    padding: 0 3px;
+    border-radius: 4px;
+    color: rgba(61, 133, 240, 1);
+    background-color: rgba(61, 133, 240, 0.1);
+    transition-duration: 200ms;
+}
+
+.credit p a:hover {
+    background-color: rgba(61, 133, 240, 0.2);
+    text-decoration: underline;
+}
+
+.code {
+    margin: 10px 0 0 0;
+}
+
+.code p {
+    margin: 0 0 10px 0;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.updates {
+    margin: 0 0 0 30px;
+}

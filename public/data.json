@@ -1,10 +1,18 @@
 {
     "updates": [
         {
-            "time": "10:15 07/05/22",
+            "id": 1,
+            "timestamp": "2022-06-03T14:15:36.511Z",
             "version": "0.0.1",
             "description": "We have decided to rebuild scrollmap.co.uk from scratch to use newer technologies and frameworks for a better and smoother overall experience.",
             "changelog": ["migrated to NextJS", "re-implemented the home screen", "completed site structure", "overlay logic", "entirely new design"]
+        },
+        {
+            "id": 2,
+            "timestamp": "2022-06-03T21:01:45.511Z",
+            "version": "0.0.2",
+            "description": "Major work has been done to the overlay logic.",
+            "changelog": ["updates overlay ported"]
         }
     ]
 }
