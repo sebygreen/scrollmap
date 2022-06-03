@@ -1,7 +1,8 @@
-import '../styles/globals.css'
+//layouts
+import Layout from "../components/Layout";
+//styles
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function MyApp({ Component, pageProps }) {
+    return <Layout head={<Component {...pageProps} />} top={<Component.Top />} bottom={<Component.Bottom />} />;
 }
-
-export default MyApp

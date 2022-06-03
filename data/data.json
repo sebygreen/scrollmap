@@ -1,0 +1,10 @@
+{
+    "updates": [
+        {
+            "time": "10:15 07/05/22",
+            "version": "0.0.1",
+            "description": "We have decided to rebuild scrollmap.co.uk from scratch to use newer technologies and frameworks for a better and smoother overall experience.",
+            "changelog": ["migrated to NextJS", "re-implemented the home screen", "completed site structure", "overlay logic", "entirely new design"]
+        }
+    ]
+}

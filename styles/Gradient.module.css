@@ -1,0 +1,11 @@
+.gradient {
+    position: absolute;
+    filter: brightness(0.8);
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    --gradient-color-1: #a960ee;
+    --gradient-color-2: #ff333d;
+    --gradient-color-3: #90e0ff;
+    --gradient-color-4: #ffcb57;
+}
