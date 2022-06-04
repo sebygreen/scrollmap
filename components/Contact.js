@@ -14,7 +14,7 @@ export default function Contact({ show, onClose }) {
         return (
             <a href={href} target="_blank" rel="noreferrer" className={styles.social}>
                 <p>{text}</p>
-                <div>{icon}</div>
+                {icon}
             </a>
         );
     }
