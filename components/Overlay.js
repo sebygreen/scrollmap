@@ -5,7 +5,31 @@ import { XIcon } from "@heroicons/react/solid";
 //styles
 import styles from "../styles/Overlay.module.css";
 
-const variants = {
+const blur = {
+    hidden: {
+        opacity: 0,
+    },
+    visible: {
+        opacity: 1,
+        transition: {
+            duration: 0.2,
+            type: "linear",
+            damping: 0,
+            stiffness: 0,
+        },
+    },
+    exit: {
+        opacity: 0,
+        transition: {
+            duration: 0.2,
+            type: "linear",
+            damping: 0,
+            stiffness: 0,
+        },
+    },
+};
+
+const overlay = {
     hidden: {
         y: "-10px",
         opacity: 0,
@@ -38,8 +62,8 @@ export default function Overlay({ onClose, title, children }) {
     }
 
     return (
-        <motion.div variants={variants} initial="hidden" animate="visible" exit="exit" className={styles.container}>
-            <div className={styles.overlay}>
+        <motion.div variants={blur} initial="hidden" animate="visible" exit="exit" className={styles.container}>
+            <motion.div variants={overlay} initial="hidden" animate="visible" exit="exit" className={styles.overlay}>
                 <div className={styles.titlebar}>
                     <h2>{title}</h2>
                     <button className={styles.close} onClick={handleClose}>
@@ -47,7 +71,7 @@ export default function Overlay({ onClose, title, children }) {
                     </button>
                 </div>
                 {children}
-            </div>
+            </motion.div>
         </motion.div>
     );
 }

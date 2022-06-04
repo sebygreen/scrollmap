@@ -1,11 +1,11 @@
 {
     "updates": [
         {
-            "id": 1,
-            "timestamp": "2022-06-03T14:15:36.511Z",
-            "version": "0.0.1",
-            "description": "We have decided to rebuild scrollmap.co.uk from scratch to use newer technologies and frameworks for a better and smoother overall experience.",
-            "changelog": ["migrated to NextJS", "re-implemented the home screen", "completed site structure", "overlay logic", "entirely new design"]
+            "id": 3,
+            "timestamp": "2022-06-04T21:47:01.511Z",
+            "version": "0.0.3",
+            "description": "Overlays are complete.",
+            "changelog": ["contact overlay ported and redesigned", "overlay animations added"]
         },
         {
             "id": 2,
@@ -13,6 +13,13 @@
             "version": "0.0.2",
             "description": "Major work has been done to the overlay logic.",
             "changelog": ["updates overlay ported"]
+        },
+        {
+            "id": 1,
+            "timestamp": "2022-06-03T14:15:36.511Z",
+            "version": "0.0.1",
+            "description": "We have decided to rebuild scrollmap.co.uk from scratch to use newer technologies and frameworks for a better and smoother overall experience.",
+            "changelog": ["migrated to NextJS", "re-implemented the home screen", "completed site structure", "overlay logic", "entirely new design"]
         }
     ]
 }

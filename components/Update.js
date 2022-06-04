@@ -15,8 +15,6 @@ export default function Update({ timestamp, version, description, changelog }) {
         );
     }
 
-    console.log(changelog);
-
     return (
         <div className={styles.container}>
             <div className={styles.titlebar}>

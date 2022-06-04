@@ -1,16 +1,21 @@
 .content {
-    margin: 15px 0 0 0;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 30px;
 }
 
 .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .text h3 {
     margin: 0 0 5px 0;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .webmaster p {
@@ -22,36 +27,24 @@
     margin: 10px 0 0 0;
 }
 
-.container {
-    display: flex;
-}
-
-.credit {
-    padding: 10px;
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.05);
-    text-align: center;
-}
-
-.credit:not(:last-child) {
-    margin: 0 10px 0 0;
-}
-
-.credit p {
+.credits p {
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.9);
 }
 
-.credit p a {
-    padding: 0 3px;
+.credits p:not(:last-child) {
+    margin: 0 0 10px 0;
+}
+
+.credits p a {
     border-radius: 4px;
     color: rgba(61, 133, 240, 1);
-    background-color: rgba(61, 133, 240, 0.1);
+    background-color: rgba(61, 133, 240, 0);
     transition-duration: 200ms;
 }
 
-.credit p a:hover {
-    background-color: rgba(61, 133, 240, 0.2);
+.credits p a:hover {
+    background-color: rgba(61, 133, 240, 0.1);
     text-decoration: underline;
 }
 
@@ -59,12 +52,22 @@
     margin: 10px 0 0 0;
 }
 
-.code p {
-    margin: 0 0 10px 0;
+.code .label {
+    padding: 0 0 10px 0;
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.9);
 }
 
-.updates {
-    margin: 0 0 0 30px;
+.updates h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.overflow {
+    border-radius: 8px;
+    max-height: 320px;
+    overflow-y: scroll;
+    background-color: rgba(35, 35, 35, 1);
 }

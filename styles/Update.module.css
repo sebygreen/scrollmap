@@ -1,4 +1,9 @@
 .container {
+    padding: 15px;
+}
+
+.container:not(:last-child) {
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.05);
 }
 
 .titlebar {
@@ -15,7 +20,7 @@
 .title p {
     color: rgba(255, 255, 255, 1);
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .title svg {
@@ -35,12 +40,12 @@
 }
 
 .entry {
-    padding: 10px 0;
+    padding: 10px 0 0 0;
 }
 
 .version {
     font-size: 2rem;
-    font-weight: 800;
+    font-weight: 700;
     color: rgba(255, 255, 255, 1);
 }
 
