@@ -27,15 +27,15 @@
     opacity: 0.6;
 }
 
-.imageWrapper {
+.image {
     box-sizing: content-box;
 }
 
-.imageWrapper span {
+.image span {
     border-radius: 8px;
 }
 
-.buttonWrapper {
+.buttons {
     display: flex;
     align-items: center;
 }

@@ -17,7 +17,7 @@ export default function Navigation() {
 
     return (
         <nav className={styles.nav}>
-            <div className={styles.imageWrapper}>
+            <div className={styles.image}>
                 <Image alt="Photo of Stephen in the sun with a guitar" src="/assets/stephen.jpg" width={60} height={60} quality={70} />
             </div>
             <ul>
@@ -47,7 +47,7 @@ export default function Navigation() {
                     </Link>
                 </li>
             </ul>
-            <div className={styles.buttonWrapper}>
+            <div className={styles.buttons}>
                 <Button type="button" text="Contact" icon={<ChatAlt2Icon />} onClick={() => setShowContact(true)} />
                 <Button type="button" text="Updates" icon={<RefreshIcon />} onClick={() => setShowUpdate(true)} />
             </div>

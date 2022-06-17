@@ -24,11 +24,17 @@ export default function Contact({ show, onClose }) {
             <Overlay title="Contact" show={show} onClose={onClose}>
                 <div className={styles.announcement}>
                     <InformationCircleIcon />
-                    <p>Since the 1st of January 2021, Sebastien Green, Stephen&apos;s son, has been taking care of this website. The below contact methods have been updated accordingly. Commercial requests are not longer accepted.</p>
+                    <p>
+                        Since the 1<sup>st</sup> of January 2021 website maintenance is being taken care of by Sebastien Green. The below contact methods have been updated accordingly.
+                    </p>
+                </div>
+                <div className={styles.announcement}>
+                    <InformationCircleIcon />
+                    <p>Commercial requests are not longer accepted.</p>
                 </div>
                 <div className={styles.content}>
                     <div className={styles.webmaster}>
-                        <Image alt="Sebastien Green's logo" src="/assets/sg.png" height={54} width={200} quality={70} />
+                        <Image alt="Sebastien Green's logo" src="/assets/sg.png" height={40} width={150} quality={70} />
                         <p>Developer & Webmaster</p>
                     </div>
                     <div className={styles.socials}>
