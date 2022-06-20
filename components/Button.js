@@ -3,7 +3,7 @@ import Link from "next/link";
 //styles
 import styles from "../styles/Button.module.css";
 
-export default function Button({ type, href, text, icon, onClick }) {
+export default function Button({ ids, id, type, href, text, icon, onClick }) {
     if (type === "link") {
         return (
             <Link href={href}>

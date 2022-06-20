@@ -1,21 +1,54 @@
 //data
-import data from "../public/data.json";
+import data from "../../public/data.json";
 //components
-import { CodeIcon } from "@heroicons/react/solid";
-import Button from "./Button";
-import Overlay from "./Overlay";
-import Portal from "./Portal";
-import Update from "./Update";
+import { CodeIcon, RefreshIcon } from "@heroicons/react/solid";
+import Button from "../Button";
+import Portal from "../Portal";
+import Overlay from "../Overlay";
 //styles
-import styles from "../styles/Updates.module.css";
+import styles from "../../styles/Updates.module.css";
 
-export default function Updates({ show, onClose }) {
+export default function Updates({ onClose }) {
+    function Update({ timestamp, version, description, changelog }) {
+        function Timestamp() {
+            let date = new Date(timestamp);
+            let options = { weekday: "long", year: "numeric", month: "long", day: "numeric" };
+
+            return (
+                <p className={styles.timestamp}>
+                    {date.toLocaleTimeString("en-UK", { hour: "2-digit", minute: "2-digit" })} <span>&bull;</span> {date.toLocaleString("en-UK", options)}
+                </p>
+            );
+        }
+
+        return (
+            <div className={styles.container}>
+                <div className={styles.titlebar}>
+                    <div className={styles.title}>
+                        <p>Patch</p>
+                        <RefreshIcon />
+                    </div>
+                    <Timestamp />
+                </div>
+                <div className={styles.entry}>
+                    <p className={styles.version}>{version}</p>
+                    <p className={styles.description}>{description}</p>
+                    <ul className={styles.changelog}>
+                        {changelog.map((change, index) => (
+                            <li key={index}>{change}</li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        );
+    }
+
     return (
         <Portal selector="#modalRoot">
-            <Overlay title="Updates" show={show} onClose={onClose}>
+            <Overlay title="Updates" onClose={onClose}>
                 <div className={styles.content}>
                     <div className={styles.text}>
-                        <div className={styles.webmaster}>
+                        <div className={styles.technologies}>
                             <h3>Frameworks</h3>
                             <p>NextJS, React, Framer Motion</p>
                         </div>

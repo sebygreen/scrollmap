@@ -1,4 +1,5 @@
 .content {
+    max-width: 800px;
     display: grid;
     grid-template-columns: 1fr 2fr;
     grid-template-rows: 1fr;
@@ -18,7 +19,7 @@
     color: rgba(255, 255, 255, 0.4);
 }
 
-.webmaster p {
+.technologies p {
     font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.9);
 }
@@ -70,4 +71,72 @@
     max-height: 320px;
     overflow-y: scroll;
     background-color: rgba(35, 35, 35, 1);
+}
+
+/*Update*/
+.container {
+    padding: 15px;
+}
+
+.container:not(:last-child) {
+    border-bottom: 2px dashed rgba(255, 255, 255, 0.05);
+}
+
+.titlebar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title p {
+    color: rgba(255, 255, 255, 1);
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.title svg {
+    margin: 0 0 0 5px;
+    color: rgba(255, 255, 255, 0.8);
+    height: 22px;
+}
+
+.timestamp {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+}
+
+.timestamp span {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.entry {
+    padding: 10px 0 0 0;
+}
+
+.version {
+    font-size: 2rem;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 1);
+}
+
+.description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.changelog {
+    margin: 10px 0 0 0;
+    list-style-position: inside;
+}
+
+.changelog li {
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
 }

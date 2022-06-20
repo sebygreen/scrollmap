@@ -6,8 +6,8 @@ import { AnimatePresence } from "framer-motion";
 //components
 import { ChatAlt2Icon, RefreshIcon } from "@heroicons/react/solid";
 import Button from "./Button";
-import Contact from "./Contact";
-import Updates from "./Updates";
+import Contact from "./overlays/Contact";
+import Updates from "./overlays/Updates";
 //styles
 import styles from "../styles/Navigation.module.css";
 

@@ -1,15 +1,15 @@
 //dependencies
 import Image from "next/image";
 //components
-import Overlay from "./Overlay";
-import Portal from "./Portal";
+import Overlay from "../Overlay";
+import Portal from "../Portal";
 //styles
-import styles from "../styles/Contact.module.css";
+import styles from "../../styles/Contact.module.css";
 import { InformationCircleIcon, PaperAirplaneIcon } from "@heroicons/react/solid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
-export default function Contact({ show, onClose }) {
+export default function Contact({ onClose }) {
     function Social({ href, text, icon }) {
         return (
             <a href={href} target="_blank" rel="noreferrer" className={styles.social}>
@@ -21,7 +21,7 @@ export default function Contact({ show, onClose }) {
 
     return (
         <Portal selector="#modalRoot">
-            <Overlay title="Contact" show={show} onClose={onClose}>
+            <Overlay title="Contact" onClose={onClose}>
                 <div className={styles.announcement}>
                     <InformationCircleIcon />
                     <p>

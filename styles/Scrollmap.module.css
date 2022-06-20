@@ -51,9 +51,9 @@
 }
 
 .data {
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 5px 6px 5px 5px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
     display: flex;
     align-items: center;
 }
@@ -65,11 +65,12 @@
 .data svg {
     margin: 0 5px 0 0;
     height: 16px;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.4);
 }
 
 .data p {
+    margin: 1px 0 0 0;
     font-size: 0.8rem;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.9);
 }

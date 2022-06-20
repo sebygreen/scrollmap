@@ -1,9 +1,14 @@
+//data
+import data from "../public/data.json";
 //dependencies
+import { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
+import { AnimatePresence } from "framer-motion";
 //components
 import { ArrowsExpandIcon, CubeTransparentIcon, HashtagIcon, LocationMarkerIcon } from "@heroicons/react/solid";
 import Button from "../components/Button";
+import Viewer from "../components/overlays/Viewer";
 //styles
 import styles from "../styles/Scrollmap.module.css";
 
@@ -27,13 +32,16 @@ Scrollmap.Top = function Top() {
 };
 
 Scrollmap.Bottom = function Bottom() {
+    const [showScroll, setShowScroll] = useState(false);
+    const [index, setIndex] = useState(-1);
+
     function Ratio(width, height) {
         let raw = width / height;
         let result = Math.round((raw * 100) / 100);
         return result;
     }
 
-    function Scroll({ name, image, height, width, alt, issue, location }) {
+    function Scroll({ id, name, image, height, width, alt, issue, location }) {
         return (
             <div className={styles.scroll}>
                 <div className={styles.info}>
@@ -54,7 +62,15 @@ Scrollmap.Bottom = function Bottom() {
                             </div>
                         </div>
                     </div>
-                    <Button type="button" text="Expand" icon={<ArrowsExpandIcon />} onClick={() => console.log("Scroll viewer logic.")} />
+                    <Button
+                        type="button"
+                        text="Expand"
+                        icon={<ArrowsExpandIcon />}
+                        onClick={() => {
+                            setIndex(id);
+                            setShowScroll(true);
+                        }}
+                    />
                 </div>
                 <div className={styles.image}>
                     <Image alt={alt} src={`/images/scrollmaps/${image}.jpg`} layout="responsive" width={width} height={height} quality={70} />
@@ -65,10 +81,20 @@ Scrollmap.Bottom = function Bottom() {
 
     return (
         <section className={styles.content}>
-            <Scroll name="Algarve's South Coast" image="algarve" width={5000} height={874} alt="Algarve's south coast scrollmap thumbnail" issue="6" location="Algarve, Portugal" />
-            <Scroll name="Tate Britain to Tower Bridge" image="tatetotower" width={7576} height={624} alt="Tate to Tower scrollmap thumbnail" issue="1" location="London, England, United Kingdom" />
-            <Scroll name="Tate Britain to Tate Modern" image="tatetotate" width={3006} height={417} alt="Tate to Tate scrollmap thumbnail" issue="3" location="London, England, United Kingdom" />
-            <Scroll name="Tenterden High Street" image="tenterden" width={4693} height={596} alt="Tenterden High Street scrollmap thumbnail" issue="1" location="Tenterden, England, United Kingdom" />
+            {data.scrollmaps.map((scrollmap) => (
+                <Scroll key={scrollmap.id} id={scrollmap.id} name={scrollmap.name} image={scrollmap.image} width={scrollmap.width} height={scrollmap.height} alt={scrollmap.alt} issue={scrollmap.issue} location={scrollmap.location} />
+            ))}
+            <AnimatePresence>
+                {showScroll && (
+                    <Viewer
+                        index={index}
+                        onClose={() => {
+                            setShowScroll(false);
+                            setIndex(-1);
+                        }}
+                    />
+                )}
+            </AnimatePresence>
         </section>
     );
 };
