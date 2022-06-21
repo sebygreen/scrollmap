@@ -58,7 +58,7 @@ const overlay = {
 
 export default function Overlay({ onClose, title, children }) {
     function handleClose(e) {
-        onClose();
+        onClose(e);
     }
 
     return (

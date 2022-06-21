@@ -31,7 +31,8 @@
             "height": 874,
             "alt": "Algarve's south coast scrollmap",
             "issue": 6,
-            "location": "Algarve, Portugal"
+            "location": "Algarve, Portugal",
+            "flag": "PT"
         },
         {
             "id": 2,
@@ -41,7 +42,8 @@
             "height": 624,
             "alt": "Tate Modern to Tower Bridge scrollmap",
             "issue": 1,
-            "location": "London, England, United Kingdom"
+            "location": "London, England, United Kingdom",
+            "flag": "GB-UKM"
         },
         {
             "id": 3,
@@ -51,7 +53,8 @@
             "height": 417,
             "alt": "Tate Britain to Tate Modern scrollmap",
             "issue": 3,
-            "location": "London, England, United Kingdom"
+            "location": "London, England, United Kingdom",
+            "flag": "GB-UKM"
         },
         {
             "id": 4,
@@ -61,7 +64,8 @@
             "height": 596,
             "alt": "Tenterden High Street scrollmap",
             "issue": 1,
-            "location": "Tenterden, England, United Kingdom"
+            "location": "Tenterden, England, United Kingdom",
+            "flag": "GB-UKM"
         }
     ]
 }
