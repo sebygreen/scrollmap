@@ -1,28 +1,48 @@
+//dependencies
+import { motion } from "framer-motion";
 //components
-import Canvas from "./Gradient";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 // styles
 import styles from "../styles/Layout.module.css";
+import Image from "next/image";
 
 export default function Layout({ head, top, bottom }) {
     return (
         <>
             {head}
             <div className={styles.container}>
-                <Canvas />
+                <div className={styles.background}>
+                    <Image
+                        alt={"Background image texture"}
+                        src={"/images/pexels-cátia-matos-1072179.jpg"}
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition="bottom"
+                        width={6000}
+                        height={4000}
+                        quality={100}
+                        priority
+                    />
+                </div>
                 <div className={styles.top}>
                     <div className={styles.content}>
                         <Navigation />
                         {top}
                     </div>
                 </div>
-                <div className={styles.bottom}>
-                    <div className={styles.content}>
+                <motion.div layout className={styles.bottom}>
+                    <motion.div
+                        transition={{
+                            duration: 0.3,
+                        }}
+                        layout="position"
+                        className={styles.content}
+                    >
                         {bottom}
                         <Footer />
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             </div>
         </>
     );
