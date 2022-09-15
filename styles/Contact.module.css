@@ -5,7 +5,7 @@
     gap: 10px;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.03);
-    border-left: 2px solid rgba(222, 167, 49, 1);
+    border-radius: 4px;
 }
 
 .announcement:not(:last-child) {
@@ -20,7 +20,7 @@
 
 .announcement p {
     margin: auto 0;
-    max-width: fit-content;
+    max-width: 450px;
     font-size: 0.8rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.6);

@@ -15,12 +15,10 @@ export default function Layout({ head, top, bottom }) {
                 <div className={styles.background}>
                     <Image
                         alt={"Background image texture"}
-                        src={"/images/pexels-cátia-matos-1072179.jpg"}
+                        src={"/images/JWT.png"}
                         layout="fill"
                         objectFit="cover"
                         objectPosition="bottom"
-                        width={6000}
-                        height={4000}
                         quality={100}
                         priority
                     />

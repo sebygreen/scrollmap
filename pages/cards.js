@@ -1,3 +1,5 @@
+// dependencies
+import Image from "next/image";
 import Head from "next/head";
 // styles
 import styles from "../styles/Cards.module.css";
@@ -16,6 +18,11 @@ Cards.Top = function Top() {
     return (
         <section className={styles.hero}>
             <h1>Cards</h1>
+            <p>
+                Many works that Stephen produced where presented in a card format. This page is a collection of them.
+                Many of these buildings are from England, Portugal and newer additions from Switzerland and the
+                surrounding French area.
+            </p>
         </section>
     );
 };
@@ -23,7 +30,65 @@ Cards.Top = function Top() {
 Cards.Bottom = function Bottom() {
     return (
         <section className={styles.explorer}>
-            <p>Cards showcase</p>
+            <div className={styles.places}>
+                <div className={styles.place}>
+                    <div className={styles.header}>
+                        <div>
+                            <Image
+                                alt={"Flag of England"}
+                                src={"/assets/flags/uk.png"}
+                                width={32}
+                                height={24}
+                                quality={100}
+                                layout="fixed"
+                            />
+                            <h2>England</h2>
+                        </div>
+                        <p className={styles.counter}>
+                            0 <span>ITEMS</span>
+                        </p>
+                    </div>
+                    <div className={styles.masonry}></div>
+                </div>
+                <div className={styles.place}>
+                    <div className={styles.header}>
+                        <div>
+                            <Image
+                                alt={"Flag of Portugal"}
+                                src={"/assets/flags/pt.png"}
+                                width={32}
+                                height={24}
+                                quality={100}
+                                layout="fixed"
+                            />
+                            <h2>Portugal</h2>
+                        </div>
+                        <p className={styles.counter}>
+                            0 <span>ITEMS</span>
+                        </p>
+                    </div>
+                    <div className={styles.masonry}></div>
+                </div>
+                <div className={styles.place}>
+                    <div className={styles.header}>
+                        <div>
+                            <Image
+                                alt={"Flag of Switzerland"}
+                                src={"/assets/flags/ch.png"}
+                                width={32}
+                                height={24}
+                                quality={100}
+                                layout="fixed"
+                            />
+                            <h2>Switzerland</h2>
+                        </div>
+                        <p className={styles.counter}>
+                            0 <span>ITEMS</span>
+                        </p>
+                    </div>
+                    <div className={styles.masonry}></div>
+                </div>
+            </div>
         </section>
     );
 };
