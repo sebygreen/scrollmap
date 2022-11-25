@@ -28,9 +28,9 @@
 }
 
 .item div h3 {
-    font-family: "Neucha", cursive;
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 500;
+    letter-spacing: -2px;
     color: rgba(255, 255, 255, 0.9);
 }
 

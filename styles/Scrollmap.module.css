@@ -3,9 +3,9 @@
 }
 
 .hero h1 {
-    font-size: 1.7rem;
+    font-size: 2.2rem;
     font-weight: 500;
-    letter-spacing: -1px;
+    letter-spacing: -2px;
     color: rgba(255, 255, 255, 0.4);
 }
 
@@ -27,10 +27,15 @@
     justify-content: space-between;
 }
 
+.text {
+    display: flex;
+    gap: 15px;
+}
+
 .text h3 {
-    font-family: "Neucha", cursive;
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 1.7rem;
+    font-weight: 500;
+    letter-spacing: -1px;
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -48,30 +53,25 @@
 }
 
 .metadata {
-    margin: 15px 0 0 0;
     display: flex;
+    gap: 5px;
 }
 
 .data {
-    border-radius: 4px;
-    padding: 5px 6px 5px 5px;
-    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 7px 5px 5px;
     display: flex;
-    align-items: center;
-}
-
-.data:not(:last-child) {
-    margin: 0 5px 0 0;
+    gap: 5px;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.05);
+    align-self: center;
 }
 
 .data svg {
-    margin: 0 5px 0 0;
     height: 16px;
     color: rgba(255, 255, 255, 0.4);
 }
 
 .data p {
-    margin: 1px 0 0 0;
     font-size: 0.8rem;
     font-weight: 400;
     color: rgba(255, 255, 255, 0.9);

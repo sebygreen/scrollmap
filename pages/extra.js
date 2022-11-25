@@ -15,7 +15,8 @@ export default function Extra() {
 Extra.Top = function Top() {
     return (
         <section className={styles.hero}>
-            <h1>Extra</h1>
+            <h1>Illustrations</h1>
+            <p>Lorem</p>
         </section>
     );
 };

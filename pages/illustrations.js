@@ -16,6 +16,7 @@ Illustrations.Top = function Top() {
     return (
         <section className={styles.hero}>
             <h1>Illustrations</h1>
+            <p>Lorem</p>
         </section>
     );
 };

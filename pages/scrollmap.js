@@ -28,9 +28,8 @@ Scrollmap.Top = function Top() {
         <section className={styles.hero}>
             <h1>Scrollmap&apos;s</h1>
             <p>
-                Scrollmap&apos;s were originally created from an idea of making tourism along river banks, coastlines,
-                and streets a little funner by mapping said location as a long horizontal trail, with the then
-                possibility of adding transport connections, places of interest, and much more.
+                Scrollmap&apos;s were originally created from an idea of making tourism along river banks, coastlines, and streets a little funner by mapping said location as a long horizontal trail, with the then possibility of adding
+                transport connections, places of interest, and much more.
             </p>
         </section>
     );
@@ -95,7 +94,7 @@ Scrollmap.Bottom = function Bottom() {
                                 <div className={styles.metadata}>
                                     <div className={styles.data}>
                                         <HashtagIcon />
-                                        <p>Issue {scrollmap.issue}</p>
+                                        <p>Issue 6</p>
                                     </div>
                                     <div className={styles.data}>
                                         <LocationMarkerIcon />
@@ -118,14 +117,7 @@ Scrollmap.Bottom = function Bottom() {
                             />
                         </div>
                         <div className={styles.image}>
-                            <Image
-                                alt={scrollmap.alt}
-                                src={`/images/scrollmaps/${scrollmap.image}.jpg`}
-                                layout="responsive"
-                                width={scrollmap.width}
-                                height={scrollmap.height}
-                                quality={70}
-                            />
+                            <Image alt={scrollmap.alt} src={`/images/scrollmaps/${scrollmap.image}.jpg`} layout="responsive" width={scrollmap.width} height={scrollmap.height} quality={70} />
                         </div>
                     </motion.div>
                 ))}
