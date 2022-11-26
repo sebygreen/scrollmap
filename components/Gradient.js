@@ -144,15 +144,13 @@ class MiniGl {
                                 if ("array" === uniform.type) return uniform.value[0].getDeclaration(name, type, uniform.value.length) + `\nconst int ${name}_length = ${uniform.value.length};`;
                                 if ("struct" === uniform.type) {
                                     let name_no_prefix = name.replace("u_", "");
-                                    return (
-                                        (name_no_prefix = name_no_prefix.charAt(0).toUpperCase() + name_no_prefix.slice(1)),
-                                        `uniform struct ${name_no_prefix} 
-                                {\n` +
-                                            Object.entries(uniform.value)
-                                                .map(([name, uniform]) => uniform.getDeclaration(name, type).replace(/^uniform/, ""))
-                                                .join("") +
-                                            `\n} ${name}${length > 0 ? `[${length}]` : ""};`
-                                    );
+                                    return (name_no_prefix = name_no_prefix.charAt(0).toUpperCase() + name_no_prefix.slice(1)),
+                                    `uniform struct ${name_no_prefix} 
+                            {\n` +
+                                        Object.entries(uniform.value)
+                                            .map(([name, uniform]) => uniform.getDeclaration(name, type).replace(/^uniform/, ""))
+                                            .join("") +
+                                        `\n} ${name}${length > 0 ? `[${length}]` : ""};`;
                                 }
                                 return `uniform ${uniform.type} ${name}${length > 0 ? `[${length}]` : ""};`;
                             }

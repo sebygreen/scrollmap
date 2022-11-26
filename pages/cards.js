@@ -1,5 +1,4 @@
-// dependencies
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Head from "next/head";
 // styles
 import styles from "../styles/Cards.module.css";

@@ -5,7 +5,7 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 // styles
 import styles from "../styles/Layout.module.css";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 export default function Layout({ children }) {
     return (
