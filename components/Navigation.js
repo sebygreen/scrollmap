@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { AnimatePresence } from "framer-motion";
 //components
 import { ChatAlt2Icon, RefreshIcon } from "@heroicons/react/solid";
@@ -14,6 +15,7 @@ import styles from "../styles/Navigation.module.css";
 export default function Navigation() {
     const [showContact, setShowContact] = useState(false);
     const [showUpdate, setShowUpdate] = useState(false);
+    const router = useRouter();
 
     return (
         <nav className={styles.nav}>
@@ -21,27 +23,28 @@ export default function Navigation() {
                 className={styles.image}
                 alt="Photo of Stephen in the sun with a guitar"
                 src="/assets/stephen.jpg"
-                width={60}
-                height={60}
+                width={40}
+                height={40}
                 quality={70}
                 style={{
                     maxWidth: "100%",
-                    height: "auto"
-                }} />
+                    height: "auto",
+                }}
+            />
             <ul>
-                <li>
+                <li className={router.pathname == "/" ? styles.active : ""}>
                     <Link href="/">Home</Link>
                 </li>
-                <li>
+                <li className={router.pathname == "/scrollmap" ? styles.active : ""}>
                     <Link href="/scrollmap">Scrollmap&apos;s</Link>
                 </li>
-                <li className={styles.li}>
+                <li className={router.pathname == "/cards" ? styles.active : ""}>
                     <Link href="/cards">Cards</Link>
                 </li>
-                <li>
+                <li className={router.pathname == "/illustrations" ? styles.active : ""}>
                     <Link href="/illustrations">Illustrations</Link>
                 </li>
-                <li>
+                <li className={router.pathname == "/extra" ? styles.active : ""}>
                     <Link href="/extra">Extra</Link>
                 </li>
             </ul>

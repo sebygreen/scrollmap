@@ -2,7 +2,7 @@
     all: unset;
     height: max-content;
     width: max-content;
-    padding: 8px 8px 8px 10px;
+    padding: 10px 10px 10px 12px;
     display: flex;
     gap: 20px;
     align-items: center;
