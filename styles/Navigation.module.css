@@ -29,9 +29,6 @@
 
 .image {
     box-sizing: content-box;
-}
-
-.image span {
     border-radius: 8px;
 }
 

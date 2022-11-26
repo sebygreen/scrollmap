@@ -14,28 +14,6 @@ import Viewer from "../components/overlays/Viewer";
 import styles from "../styles/Scrollmap.module.css";
 
 export default function Scrollmap() {
-    return (
-        <Head>
-            <title>scrollmap.co.uk &bull; Scrollmap</title>
-            <meta name="description" content="this page is a showcase of Scrollmap's" />
-            <link rel="icon" href="/favicon.ico" />
-        </Head>
-    );
-}
-
-Scrollmap.Top = function Top() {
-    return (
-        <section className={styles.hero}>
-            <h1>Scrollmap&apos;s</h1>
-            <p>
-                Scrollmap&apos;s were originally created from an idea of making tourism along river banks, coastlines, and streets a little funner by mapping said location as a long horizontal trail, with the then possibility of adding
-                transport connections, places of interest, and much more.
-            </p>
-        </section>
-    );
-};
-
-Scrollmap.Bottom = function Bottom() {
     const [showScroll, setShowScroll] = useState(false);
     const [index, setIndex] = useState(-1);
 
@@ -85,7 +63,19 @@ Scrollmap.Bottom = function Bottom() {
 
     return (
         <>
-            <motion.section initial="hidden" animate="visible" variants={scrollmap} className={styles.content}>
+            <Head>
+                <title>scrollmap.co.uk &bull; Scrollmap</title>
+                <meta name="description" content="this page is a showcase of Scrollmap's" />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <section className={styles.hero}>
+                <h1>Scrollmap&apos;s</h1>
+                <p>
+                    Scrollmap&apos;s were originally created from an idea of making tourism along river banks, coastlines, and streets a little funner by mapping said location as a long horizontal trail, with the then possibility of adding
+                    transport connections, places of interest, and much more.
+                </p>
+            </section>
+            <section initial="hidden" animate="visible" variants={scrollmap} className={styles.content}>
                 {data.scrollmaps.map((scrollmap) => (
                     <motion.div variants={scroll} key={scrollmap.id} className={styles.scroll}>
                         <div className={styles.info}>
@@ -116,12 +106,10 @@ Scrollmap.Bottom = function Bottom() {
                                 }}
                             />
                         </div>
-                        <div className={styles.image}>
-                            <Image alt={scrollmap.alt} src={`/images/scrollmaps/${scrollmap.image}.jpg`} layout="responsive" width={scrollmap.width} height={scrollmap.height} quality={70} />
-                        </div>
+                        <Image className={styles.image} alt={scrollmap.alt} src={`/images/scrollmaps/${scrollmap.image}.jpg`} layout="responsive" width={scrollmap.width} height={scrollmap.height} quality={70} />
                     </motion.div>
                 ))}
-            </motion.section>
+            </section>
             <AnimatePresence>
                 {showScroll && (
                     <Viewer
@@ -135,4 +123,4 @@ Scrollmap.Bottom = function Bottom() {
             </AnimatePresence>
         </>
     );
-};
+}

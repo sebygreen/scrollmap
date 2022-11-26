@@ -7,40 +7,25 @@ import Footer from "./Footer";
 import styles from "../styles/Layout.module.css";
 import Image from "next/image";
 
-export default function Layout({ head, top, bottom }) {
+export default function Layout({ children }) {
     return (
         <>
-            {head}
             <div className={styles.container}>
-                <div className={styles.background}>
-                    <Image
-                        alt={"Background image texture"}
-                        src={"/images/JWT.png"}
-                        layout="fill"
-                        objectFit="cover"
-                        objectPosition="bottom"
-                        quality={100}
-                        priority
-                    />
-                </div>
-                <div className={styles.top}>
-                    <div className={styles.content}>
-                        <Navigation />
-                        {top}
-                    </div>
-                </div>
-                <motion.div layout className={styles.bottom}>
-                    <motion.div
-                        transition={{
-                            duration: 0.3,
-                        }}
-                        layout="position"
-                        className={styles.content}
-                    >
-                        {bottom}
-                        <Footer />
+                <Navigation />
+                <div className={styles.content}>
+                    <motion.div layout className={styles.bottom}>
+                        <motion.div
+                            transition={{
+                                duration: 0.3,
+                            }}
+                            layout="position"
+                            className={styles.content}
+                        >
+                            {children}
+                        </motion.div>
                     </motion.div>
-                </motion.div>
+                </div>
+                <Footer />
             </div>
         </>
     );

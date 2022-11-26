@@ -7,10 +7,10 @@ export default function Button({ ids, id, type, href, text, icon, onClick }) {
     if (type === "link") {
         return (
             <Link href={href}>
-                <a className={styles.button}>
+                <div className={styles.button}>
                     {text}
                     {icon}
-                </a>
+                </div>
             </Link>
         );
     } else if (type === "button") {

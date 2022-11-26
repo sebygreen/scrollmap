@@ -17,34 +17,22 @@ export default function Navigation() {
 
     return (
         <nav className={styles.nav}>
-            <div className={styles.image}>
-                <Image alt="Photo of Stephen in the sun with a guitar" src="/assets/stephen.jpg" width={60} height={60} quality={70} />
-            </div>
+            <Image className={styles.image} alt="Photo of Stephen in the sun with a guitar" src="/assets/stephen.jpg" width={60} height={60} quality={70} />
             <ul>
                 <li>
-                    <Link href="/">
-                        <a>Home</a>
-                    </Link>
+                    <Link href="/">Home</Link>
                 </li>
                 <li>
-                    <Link href="/scrollmap">
-                        <a>Scrollmap&apos;s</a>
-                    </Link>
+                    <Link href="/scrollmap">Scrollmap&apos;s</Link>
                 </li>
                 <li className={styles.li}>
-                    <Link href="/cards">
-                        <a>Cards</a>
-                    </Link>
+                    <Link href="/cards">Cards</Link>
                 </li>
                 <li>
-                    <Link href="/illustrations">
-                        <a>Illustrations</a>
-                    </Link>
+                    <Link href="/illustrations">Illustrations</Link>
                 </li>
                 <li>
-                    <Link href="/extra">
-                        <a>Extra</a>
-                    </Link>
+                    <Link href="/extra">Extra</Link>
                 </li>
             </ul>
             <div className={styles.buttons}>
