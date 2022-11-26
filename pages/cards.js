@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Head from "next/head";
 // styles
 import styles from "../styles/Cards.module.css";
@@ -31,7 +31,12 @@ Cards.Bottom = function Bottom() {
                 <div className={styles.place}>
                     <div className={styles.header}>
                         <div>
-                            <Image alt={"Flag of England"} src={"/assets/flags/uk.png"} width={24} height={24} quality={100} layout="fixed" />
+                            <Image
+                                alt={"Flag of England"}
+                                src={"/assets/flags/uk.png"}
+                                width={24}
+                                height={24}
+                                quality={100} />
                             <h2>England</h2>
                         </div>
                         <p className={styles.counter}>
@@ -43,7 +48,12 @@ Cards.Bottom = function Bottom() {
                 <div className={styles.place}>
                     <div className={styles.header}>
                         <div>
-                            <Image alt={"Flag of Portugal"} src={"/assets/flags/pt.png"} width={24} height={24} quality={100} layout="fixed" />
+                            <Image
+                                alt={"Flag of Portugal"}
+                                src={"/assets/flags/pt.png"}
+                                width={24}
+                                height={24}
+                                quality={100} />
                             <h2>Portugal</h2>
                         </div>
                         <p className={styles.counter}>
@@ -55,7 +65,12 @@ Cards.Bottom = function Bottom() {
                 <div className={styles.place}>
                     <div className={styles.header}>
                         <div>
-                            <Image alt={"Flag of Switzerland"} src={"/assets/flags/ch.png"} width={24} height={24} quality={100} layout="fixed" />
+                            <Image
+                                alt={"Flag of Switzerland"}
+                                src={"/assets/flags/ch.png"}
+                                width={24}
+                                height={24}
+                                quality={100} />
                             <h2>Switzerland</h2>
                         </div>
                         <p className={styles.counter}>
@@ -67,7 +82,12 @@ Cards.Bottom = function Bottom() {
                 <div className={styles.place}>
                     <div className={styles.header}>
                         <div>
-                            <Image alt={"Flag of France"} src={"/assets/flags/fr.png"} width={24} height={24} quality={100} layout="fixed" />
+                            <Image
+                                alt={"Flag of France"}
+                                src={"/assets/flags/fr.png"}
+                                width={24}
+                                height={24}
+                                quality={100} />
                             <h2>France</h2>
                         </div>
                         <p className={styles.counter}>

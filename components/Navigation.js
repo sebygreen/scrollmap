@@ -1,6 +1,6 @@
 //dependencies
 import { useState } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
 //components
@@ -17,7 +17,17 @@ export default function Navigation() {
 
     return (
         <nav className={styles.nav}>
-            <Image className={styles.image} alt="Photo of Stephen in the sun with a guitar" src="/assets/stephen.jpg" width={60} height={60} quality={70} />
+            <Image
+                className={styles.image}
+                alt="Photo of Stephen in the sun with a guitar"
+                src="/assets/stephen.jpg"
+                width={60}
+                height={60}
+                quality={70}
+                style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                }} />
             <ul>
                 <li>
                     <Link href="/">Home</Link>

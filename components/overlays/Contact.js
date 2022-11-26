@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 //components
 import Overlay from "../Overlay";
 import Portal from "../Portal";
@@ -33,7 +33,16 @@ export default function Contact({ onClose }) {
                 </div>
                 <div className={styles.content}>
                     <div className={styles.webmaster}>
-                        <Image alt="Sebastien Green's logo" src="/assets/sg.png" height={40} width={150} quality={70} />
+                        <Image
+                            alt="Sebastien Green's logo"
+                            src="/assets/sg.png"
+                            height={40}
+                            width={150}
+                            quality={70}
+                            style={{
+                                maxWidth: "100%",
+                                height: "auto"
+                            }} />
                         <p>Developer & Webmaster</p>
                     </div>
                     <div className={styles.socials}>
