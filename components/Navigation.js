@@ -33,20 +33,30 @@ export default function Navigation() {
                     }}
                 />
                 <ul>
-                    <li className={router.pathname == "/" ? styles.active : ""}>
-                        <Link href="/">Home</Link>
+                    <li>
+                        <Link className={router.pathname == "/" ? styles.active : ""} href="/">
+                            Home
+                        </Link>
                     </li>
-                    <li className={router.pathname == "/scrollmap" ? styles.active : ""}>
-                        <Link href="/scrollmap">Scrollmap&apos;s</Link>
+                    <li>
+                        <Link className={router.pathname == "/scrollmap" ? styles.active : ""} href="/scrollmap">
+                            Scrollmap&apos;s
+                        </Link>
                     </li>
-                    <li className={router.pathname == "/cards" ? styles.active : ""}>
-                        <Link href="/cards">Cards</Link>
+                    <li>
+                        <Link className={router.pathname == "/cards" ? styles.active : ""} href="/cards">
+                            Cards
+                        </Link>
                     </li>
-                    <li className={router.pathname == "/illustrations" ? styles.active : ""}>
-                        <Link href="/illustrations">Illustrations</Link>
+                    <li>
+                        <Link className={router.pathname == "/illustrations" ? styles.active : ""} href="/illustrations">
+                            Illustrations
+                        </Link>
                     </li>
-                    <li className={router.pathname == "/extra" ? styles.active : ""}>
-                        <Link href="/extra">Extra</Link>
+                    <li>
+                        <Link className={router.pathname == "/extra" ? styles.active : ""} href="/extra">
+                            Extra
+                        </Link>
                     </li>
                 </ul>
                 <div className={styles.buttons}>

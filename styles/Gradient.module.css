@@ -1,6 +1,6 @@
 .gradient {
     position: absolute;
-    filter: brightness(0.8);
+    filter: brightness(0.6);
     height: 100%;
     width: 100%;
     --gradient-color-1: #a960ee;
