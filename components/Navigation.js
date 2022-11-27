@@ -58,9 +58,6 @@ export default function Navigation() {
                     {showUpdate && <Updates onClose={() => setShowUpdate(false)} />}
                 </AnimatePresence>
             </nav>
-            <h1 className={styles.title}>
-                {router.pathname == "/scrollmap" ? "Scrollmap's" : router.pathname == "/cards" ? "Cards" : router.pathname == "/illustrations" ? "Illustrations" : router.pathname == "/extra" ? "Miscellaneous" : "Homepage"}
-            </h1>
         </div>
     );
 }
