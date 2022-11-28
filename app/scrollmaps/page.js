@@ -1,23 +1,13 @@
 // dependencies
-import { supabase } from "../../utils/supabase";
+import { supabase } from "../../lib/supabase";
 // components
 import Scrolls from "../../components/Scrolls";
 
-async function getData() {
-    const { data, error } = await supabase.from("scrollmaps").select();
-    if (error) {
-        return (
-            <p>
-                No scrollmaps.<br>{error}</br>
-            </p>
-        );
-    } else {
-        console.log(data);
-        return data;
-    }
-}
-
 export default async function Page() {
-    const scrollmaps = await getData();
-    return <Scrolls scrollmaps={scrollmaps} />;
+    const { data: scrollmaps, error } = await supabase.from("scrollmaps").select("*");
+    if (error) {
+        return <h2>Error loading items.</h2>;
+    } else {
+        return <Scrolls scrollmaps={scrollmaps} />;
+    }
 }
