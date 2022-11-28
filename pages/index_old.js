@@ -19,7 +19,6 @@ export default function Home() {
         visible: {
             opacity: 1,
             transition: {
-                when: "beforeChildren",
                 staggerChildren: 0.1,
             },
         },
@@ -30,7 +29,7 @@ export default function Home() {
             opacity: 0,
             x: "-10px",
             transition: {
-                duration: 0.3,
+                duration: 0.2,
                 type: "linear",
                 damping: 0,
                 stiffness: 0,
@@ -40,7 +39,7 @@ export default function Home() {
             opacity: 1,
             x: 0,
             transition: {
-                duration: 0.3,
+                duration: 0.2,
                 type: "linear",
                 damping: 0,
                 stiffness: 0,

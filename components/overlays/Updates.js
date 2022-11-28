@@ -1,7 +1,7 @@
 //data
 import data from "../../public/data.json";
 //components
-import { CodeIcon, RefreshIcon } from "@heroicons/react/solid";
+import { CodeBracketIcon, ArrowPathIcon } from "@heroicons/react/24/solid";
 import Button from "../Button";
 import Portal from "../Portal";
 import Overlay from "../Overlay";
@@ -26,7 +26,7 @@ export default function Updates({ onClose }) {
                 <div className={styles.titlebar}>
                     <div className={styles.title}>
                         <p>Patch</p>
-                        <RefreshIcon />
+                        <ArrowPathIcon />
                     </div>
                     <Timestamp />
                 </div>
@@ -72,7 +72,7 @@ export default function Updates({ onClose }) {
                         <div className={styles.code}>
                             <h3>Code</h3>
                             <p className={styles.label}>The code for this website is hosted on github.</p>
-                            <Button type="anchor" href="https://github.com/sebygreen/scrollmap" text="Source" icon={<CodeIcon />} />
+                            <Button type="anchor" href="https://github.com/sebygreen/scrollmap" text="Source" icon={<CodeBracketIcon />} />
                         </div>
                     </div>
                     <div className={styles.updates}>

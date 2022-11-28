@@ -1,7 +1,7 @@
 //dependencies
 import { motion } from "framer-motion";
 //components
-import { XIcon } from "@heroicons/react/solid";
+import { XMarkIcon } from "@heroicons/react/24/solid";
 //styles
 import styles from "../styles/Overlay.module.css";
 
@@ -67,7 +67,7 @@ export default function Overlay({ onClose, title, children }) {
                 <div className={styles.titlebar}>
                     <h2>{title}</h2>
                     <button className={styles.close} onClick={handleClose}>
-                        <XIcon />
+                        <XMarkIcon />
                     </button>
                 </div>
                 {children}

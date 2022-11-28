@@ -1,11 +1,12 @@
+"use client";
 //dependencies
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { usePathname } from "next/navigation";
 import { AnimatePresence } from "framer-motion";
 //components
-import { ChatAlt2Icon, RefreshIcon } from "@heroicons/react/solid";
+import { ChatBubbleLeftRightIcon, ArrowPathIcon } from "@heroicons/react/24/solid";
 import Button from "./Button";
 import Contact from "./overlays/Contact";
 import Updates from "./overlays/Updates";
@@ -15,7 +16,7 @@ import styles from "../styles/Navigation.module.css";
 export default function Navigation() {
     const [showContact, setShowContact] = useState(false);
     const [showUpdate, setShowUpdate] = useState(false);
-    const router = useRouter();
+    const pathname = usePathname();
 
     return (
         <div className={styles.container}>
@@ -34,34 +35,34 @@ export default function Navigation() {
                 />
                 <ul>
                     <li>
-                        <Link className={router.pathname == "/" ? styles.active : ""} href="/">
+                        <Link className={pathname == "/" ? styles.active : ""} href="/">
                             Home
                         </Link>
                     </li>
                     <li>
-                        <Link className={router.pathname == "/scrollmap" ? styles.active : ""} href="/scrollmap">
+                        <Link className={pathname == "/scrollmaps" ? styles.active : ""} href="/scrollmaps">
                             Scrollmap&apos;s
                         </Link>
                     </li>
                     <li>
-                        <Link className={router.pathname == "/cards" ? styles.active : ""} href="/cards">
+                        <Link className={pathname == "/cards" ? styles.active : ""} href="/cards">
                             Cards
                         </Link>
                     </li>
                     <li>
-                        <Link className={router.pathname == "/illustrations" ? styles.active : ""} href="/illustrations">
+                        <Link className={pathname == "/illustrations" ? styles.active : ""} href="/illustrations">
                             Illustrations
                         </Link>
                     </li>
                     <li>
-                        <Link className={router.pathname == "/extra" ? styles.active : ""} href="/extra">
+                        <Link className={pathname == "/extra" ? styles.active : ""} href="/extra">
                             Extra
                         </Link>
                     </li>
                 </ul>
                 <div className={styles.buttons}>
-                    <Button type="button" text="Contact" icon={<ChatAlt2Icon />} onClick={() => setShowContact(true)} />
-                    <Button type="button" text="Updates" icon={<RefreshIcon />} onClick={() => setShowUpdate(true)} />
+                    <Button type="button" text="Contact" icon={<ChatBubbleLeftRightIcon />} onClick={() => setShowContact(true)} />
+                    <Button type="button" text="Updates" icon={<ArrowPathIcon />} onClick={() => setShowUpdate(true)} />
                 </div>
                 <AnimatePresence>
                     {showContact && <Contact onClose={() => setShowContact(false)} />}

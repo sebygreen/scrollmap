@@ -20,7 +20,7 @@ export default function Layout({ children }) {
                     <h1 className={styles.title}>
                         {router.pathname == "/scrollmap" ? "Scrollmap's" : router.pathname == "/cards" ? "Cards" : router.pathname == "/illustrations" ? "Illustrations" : router.pathname == "/extra" ? "Miscellaneous" : "Homepage"}
                     </h1>
-                    <div class={styles.tilt}>
+                    <div className={styles.tilt}>
                         <svg viewBox="0 0 1440 120" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" fill="currentColor">
                             <path d="M0 120L1440 0V120H0Z" />
                         </svg>

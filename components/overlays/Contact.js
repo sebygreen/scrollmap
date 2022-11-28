@@ -4,7 +4,7 @@ import Overlay from "../Overlay";
 import Portal from "../Portal";
 //styles
 import styles from "../../styles/Contact.module.css";
-import { InformationCircleIcon, PaperAirplaneIcon } from "@heroicons/react/solid";
+import { ExclamationCircleIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTwitter, faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
@@ -22,13 +22,13 @@ export default function Contact({ onClose }) {
         <Portal selector="#modalRoot">
             <Overlay title="Contact" onClose={onClose}>
                 <div className={styles.announcement}>
-                    <InformationCircleIcon />
+                    <ExclamationCircleIcon />
                     <p>
                         Since the 1<sup>st</sup> of January 2021 website maintenance is being taken care of by Sebastien Green. The below contact methods have been updated accordingly.
                     </p>
                 </div>
                 <div className={styles.announcement}>
-                    <InformationCircleIcon />
+                    <ExclamationCircleIcon />
                     <p>Commercial requests are not longer accepted.</p>
                 </div>
                 <div className={styles.content}>
@@ -41,8 +41,9 @@ export default function Contact({ onClose }) {
                             quality={70}
                             style={{
                                 maxWidth: "100%",
-                                height: "auto"
-                            }} />
+                                height: "auto",
+                            }}
+                        />
                         <p>Developer & Webmaster</p>
                     </div>
                     <div className={styles.socials}>

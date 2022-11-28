@@ -10,6 +10,7 @@ import { motion } from "framer-motion";
 import { ArrowsExpandIcon, CubeTransparentIcon, HashtagIcon, LocationMarkerIcon } from "@heroicons/react/solid";
 import Button from "../components/Button";
 import Viewer from "../components/overlays/Viewer";
+import Spinner from "../components/Spinner";
 //styles
 import styles from "../styles/Scrollmap.module.css";
 
@@ -23,15 +24,13 @@ export default function Scrollmap() {
         return result;
     }
 
-    const scrollmap = {
+    const container = {
         hidden: {
-            opacity: 0,
             transition: {
                 when: "afterChildren",
             },
         },
         visible: {
-            opacity: 1,
             transition: {
                 staggerChildren: 0.1,
             },
@@ -43,7 +42,7 @@ export default function Scrollmap() {
             opacity: 0,
             y: "-10px",
             transition: {
-                duration: 0.3,
+                duration: 0.2,
                 type: "linear",
                 damping: 0,
                 stiffness: 0,
@@ -53,7 +52,7 @@ export default function Scrollmap() {
             opacity: 1,
             y: 0,
             transition: {
-                duration: 0.3,
+                duration: 0.2,
                 type: "linear",
                 damping: 0,
                 stiffness: 0,
@@ -68,7 +67,7 @@ export default function Scrollmap() {
                 <meta name="description" content="this page is a showcase of Scrollmap's" />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <section initial="hidden" animate="visible" variants={scrollmap} className={styles.content}>
+            <motion.section initial="hidden" animate="visible" variants={container} className={styles.content}>
                 {data.scrollmaps.map((scrollmap) => (
                     <motion.div variants={scroll} key={scrollmap.id} className={styles.scroll}>
                         <div className={styles.info}>
@@ -114,7 +113,7 @@ export default function Scrollmap() {
                         />
                     </motion.div>
                 ))}
-            </section>
+            </motion.section>
             <AnimatePresence>
                 {showScroll && (
                     <Viewer
