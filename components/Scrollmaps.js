@@ -67,7 +67,7 @@ export default function Scrollmaps({ scrollmaps }) {
                                 </div>
                             </div>
                         </div>
-                        <Button type="link" href="/scrollmaps" text="Expand" icon={<ArrowsPointingOutIcon />} />
+                        <Button type="link" href={"/scrollmaps/" + scrollmap.slug} text="Expand" icon={<ArrowsPointingOutIcon />} />
                     </div>
                     <Image className={styles.image} alt={scrollmap.alt} src={scrollmap.img} height={scrollmap.height} width={scrollmap.width} quality={70} />
                 </motion.div>
