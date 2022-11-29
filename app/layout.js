@@ -9,6 +9,7 @@ import Footer from "../components/Footer";
 import Gradient from "../components/Gradient";
 // styles
 import styles from "../styles/Layout.module.css";
+import "../styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {

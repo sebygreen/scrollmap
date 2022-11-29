@@ -5,15 +5,10 @@ import { motion } from "framer-motion";
 // components
 import { ArrowsPointingOutIcon, CubeTransparentIcon, HashtagIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import Button from "./Button";
-// images
-import algarve from "../public/images/scrollmaps/algarve.jpg";
-import tateTower from "../public/images/scrollmaps/tate-tower.jpg";
-import tateTate from "../public/images/scrollmaps/tate-tate.jpg";
-import tenterden from "../public/images/scrollmaps/tenterden.jpg";
 // styles
 import styles from "../styles/Scrollmaps.module.css";
 
-export default function Scrolls({ scrollmaps }) {
+export default function Scrollmaps({ scrollmaps }) {
     const container = {
         hidden: {
             transition: {
