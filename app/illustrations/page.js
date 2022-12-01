@@ -6,7 +6,7 @@ import styles from "../../styles/Illustrations.module.css";
 export default function Illustrations() {
     return (
         <section className={styles.hero}>
-            <Spinner />
+            <p>Lorem</p>
         </section>
     );
 }

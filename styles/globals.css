@@ -1,4 +1,3 @@
-html,
 body {
     background-color: rgba(10, 10, 10, 1);
 }
@@ -16,4 +15,8 @@ a {
 
 #modalRoot {
     position: absolute;
+}
+
+[data-nextjs-scroll-focus-boundary] {
+    display: contents;
 }

@@ -1,0 +1,47 @@
+.grid {
+    position: relative;
+    display: grid;
+    grid-template-rows: min-content min-content 1fr;
+    height: 100%;
+    max-height: 600px;
+}
+
+.titlebar {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.titlebar h1 {
+    color: rgba(255, 255, 255, 1);
+    font-weight: 500;
+    font-size: 1.6rem;
+    letter-spacing: -1px;
+}
+
+.metadata {
+    margin-bottom: 20px;
+}
+
+.data {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.data:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.data svg {
+    display: block;
+    height: 24px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.data h2 {
+    font-size: 1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.4);
+}

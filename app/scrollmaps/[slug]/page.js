@@ -2,6 +2,9 @@
 import Scrollmap from "../../../components/Scrollmap";
 // dependencies
 import { supabase } from "../../../lib/supabase";
+import { notFound } from "next/navigation";
+
+export const revalidate = 3600; // revalidate every hour
 
 export async function generateStaticParams() {
     const { data: scrollmaps } = await supabase.from("scrollmaps").select("*");
@@ -12,13 +15,13 @@ export async function generateStaticParams() {
 
 export default async function Page({ params }) {
     if (!params) {
-        return <h2>Error loading page.</h2>;
+        return notFound();
     } else {
-        const { data: scrollmap, error } = await supabase.from("scrollmaps").select("*").eq("slug", params.slug);
+        const { data, error } = await supabase.from("scrollmaps").select().eq("slug", params.slug);
         if (error) {
             return <h2>Error loading items.</h2>;
         } else {
-            return <Scrollmap scrollmap={scrollmap} />;
+            return <Scrollmap scrollmap={data[0]} />;
         }
     }
 }

@@ -14,11 +14,18 @@
         "@fortawesome/react-fontawesome": "^0.2.0",
         "@heroicons/react": "^2.0.13",
         "@next/font": "^13.0.5",
+        "@pronestor/react-zoom-pan-pinch": "^2.4.3",
         "@supabase/supabase-js": "^2.1.1",
         "framer-motion": "^7.6.15",
         "next": "^13.0.5",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
+    },
+    "overrides": {
+        "react-zoom-pan-pinch": {
+            "react": "$react",
+            "react-dom": "$react-dom"
+        }
     },
     "devDependencies": {
         "eslint": "8.28.0",
