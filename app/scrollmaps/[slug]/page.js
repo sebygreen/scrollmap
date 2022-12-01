@@ -13,15 +13,20 @@ export async function generateStaticParams() {
     }));
 }
 
+async function getScroll(slug) {
+    const { data, error } = await supabase.from("scrollmaps").select("*").eq("slug", slug);
+    return { data, error };
+}
+
 export default async function Page({ params }) {
     if (!params) {
-        return notFound();
+        return <h2>Error loading page.</h2>;
     } else {
-        const { data, error } = await supabase.from("scrollmaps").select().eq("slug", params.slug);
-        if (error) {
-            return <h2>Error loading items.</h2>;
+        const scroll = await getScroll(params.slug);
+        if (scroll.error) {
+            return <h2>Error loading item.</h2>;
         } else {
-            return <Scrollmap scrollmap={data[0]} />;
+            return <Scrollmap scrollmap={scroll.data[0]} />;
         }
     }
 }

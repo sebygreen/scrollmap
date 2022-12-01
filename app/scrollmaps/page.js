@@ -5,11 +5,16 @@ import Scrollmaps from "../../components/Scrollmaps";
 
 export const revalidate = 3600; // revalidate every hour
 
-export default async function Page() {
-    const { data: scrollmaps, error } = await supabase.from("scrollmaps").select("*");
+async function getScrolls() {
+    const { data, error } = await supabase.from("scrollmaps").select("*");
     if (error) {
-        return <h2>Error loading items.</h2>;
+        return undefined;
     } else {
-        return <Scrollmaps scrollmaps={scrollmaps} />;
+        return <Scrollmaps scrollmaps={data} />;
     }
+}
+
+export default async function Page() {
+    const scrollmaps = await getScrolls();
+    return <Scrollmaps scrollmaps={scrollmaps} />;
 }
