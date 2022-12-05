@@ -9,10 +9,6 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^6.2.1",
-        "@fortawesome/free-brands-svg-icons": "^6.2.1",
-        "@fortawesome/react-fontawesome": "^0.2.0",
-        "@heroicons/react": "^2.0.13",
         "@next/font": "^13.0.6",
         "@pronestor/react-zoom-pan-pinch": "^2.4.3",
         "@supabase/supabase-js": "^2.1.1",
