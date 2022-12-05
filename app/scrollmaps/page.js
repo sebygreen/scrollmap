@@ -10,7 +10,7 @@ async function getScrolls() {
     if (error) {
         return undefined;
     } else {
-        return <Scrollmaps scrollmaps={data} />;
+        return data;
     }
 }
 

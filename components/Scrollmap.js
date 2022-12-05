@@ -39,7 +39,7 @@ export default function Scrollmap({ scrollmap }) {
                         />
                     </svg>
                     <h2>
-                        {scrollmap.height}px wide &bull; {scrollmap.width}px tall
+                        {scrollmap.height}px tall &bull; {scrollmap.width}px wide
                     </h2>
                 </div>
                 <div className={styles.data}>
