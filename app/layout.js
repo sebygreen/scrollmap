@@ -1,6 +1,5 @@
 // font
 import local from "@next/font/local";
-// dependencies
 // components
 import Footer from "../components/Footer";
 import Header from "../components/Header";

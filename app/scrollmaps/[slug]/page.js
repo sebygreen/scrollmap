@@ -2,7 +2,6 @@
 import Scrollmap from "../../../components/Scrollmap";
 // dependencies
 import { supabase } from "../../../lib/supabase";
-import { notFound } from "next/navigation";
 
 export const revalidate = 3600; // revalidate every hour
 

@@ -10,7 +10,6 @@
     },
     "dependencies": {
         "@next/font": "^13.0.6",
-        "@pronestor/react-zoom-pan-pinch": "^2.4.3",
         "@supabase/supabase-js": "^2.1.1",
         "framer-motion": "^7.6.18",
         "next": "^13.0.6",
