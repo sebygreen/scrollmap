@@ -23,10 +23,10 @@
 }
 
 .titlebar h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
     letter-spacing: -1px;
     color: rgba(255, 255, 255, 1);
-    font-size: 1.5rem;
-    font-weight: 600;
 }
 
 .close {

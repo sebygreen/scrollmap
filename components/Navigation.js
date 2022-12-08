@@ -63,6 +63,7 @@ export default function Navigation() {
                     <Button
                         type="button"
                         text="Contact"
+                        blur={true}
                         icon={
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -79,6 +80,7 @@ export default function Navigation() {
                     <Button
                         type="button"
                         text="Updates"
+                        blur={true}
                         icon={
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                 <path
