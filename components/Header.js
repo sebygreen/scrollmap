@@ -10,20 +10,9 @@ export default function Header() {
     const pathname = usePathname();
     return (
         <div className={styles.header}>
-            <Gradient />
             <Navigation />
             <div className={styles.titlebar}>
-                <h1 className={styles.title}>
-                    {pathname == "/scrollmaps"
-                        ? "Scrollmap's"
-                        : pathname == "/cards"
-                        ? "Cards"
-                        : pathname == "/illustrations"
-                        ? "Illustrations"
-                        : pathname == "/extra"
-                        ? "Miscellaneous"
-                        : "Homepage"}
-                </h1>
+                <h1 className={styles.title}>{pathname == "/scrollmaps" ? "Scrollmap's" : pathname == "/cards" ? "Cards" : pathname == "/illustrations" ? "Illustrations" : pathname == "/extra" ? "Miscellaneous" : "Homepage"}</h1>
                 <div className={styles.tilt}>
                     <svg
                         viewBox="0 0 1440 120"
