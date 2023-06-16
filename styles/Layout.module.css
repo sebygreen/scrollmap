@@ -1,8 +1,7 @@
 .viewport {
     position: relative;
-    height: 100vh;
+    height: auto;
     width: 100%;
-    overflow: auto;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: min-content 1fr min-content;

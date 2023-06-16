@@ -9,9 +9,9 @@
         "lint": "next lint"
     },
     "dependencies": {
-        "@supabase/supabase-js": "^2.11.0",
-        "framer-motion": "^10.6.0",
-        "next": "^13.2.4",
+        "@supabase/supabase-js": "^2.25.0",
+        "framer-motion": "^10.12.16",
+        "next": "^13.4.6",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
@@ -23,7 +23,8 @@
     },
     "devDependencies": {
         "encoding": "^0.1.13",
-        "eslint": "8.36.0",
-        "eslint-config-next": "^13.2.4"
+        "eslint": "8.42.0",
+        "eslint-config-next": "^13.4.6",
+        "sharp": "^0.32.1"
     }
 }
