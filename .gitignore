@@ -33,4 +33,4 @@ yarn-error.log*
 .vercel
 
 # pocketbase
-data/*
+pocketbase/data/*
