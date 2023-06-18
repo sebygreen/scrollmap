@@ -1,0 +1,29 @@
+version: "3"
+services:
+    nextjs:
+        build:
+            context: ./nextjs
+            dockerfile: dev.Dockerfile
+        container_name: nextjs
+        restart: always
+        ports:
+            - 3000:3000
+        env_file: #set envrionment variables based on the .env file
+            - .env.local
+        volumes:
+            - ./next-app/src:/app/src
+            - ./next-app/public:/app/public
+
+    pocketbase:
+        image: ghcr.io/muchobien/pocketbase:latest
+        container_name: pocketbase
+        restart: unless-stopped
+        ports:
+            - 8090:8090
+        volumes:
+            - ./data:/pb_data
+        healthcheck: #optional (recommended) since v0.10.0
+            test: wget --no-verbose --tries=1 --spider http://localhost:8090/api/health || exit 1
+            interval: 5s
+            timeout: 5s
+            retries: 5
