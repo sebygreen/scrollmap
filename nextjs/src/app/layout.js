@@ -1,6 +1,6 @@
 // font
 import local from "next/font/local";
-const satoshi = local({ src: "../public/fonts/Satoshi.ttf" });
+const satoshi = local({ src: "../../public/fonts/Satoshi.ttf" });
 // components
 import Footer from "../components/Footer";
 import Header from "../components/Header";

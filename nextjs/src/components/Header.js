@@ -8,7 +8,7 @@ import Gradient from "../components/Gradient";
 // styles
 import styles from "../styles/Header.module.css";
 // media
-import purple from "../public/assets/purple.png";
+import purple from "../../public/assets/purple.png";
 
 export default function Header() {
     const pathname = usePathname();
