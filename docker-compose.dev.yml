@@ -5,7 +5,7 @@ services:
             context: ./nextjs
             dockerfile: dev.Dockerfile
         container_name: nextjs
-        restart: always
+        restart: unless-stopped
         ports:
             - 3000:3000
         env_file: #set envrionment variables based on the .env file
