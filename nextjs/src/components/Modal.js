@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import { motion, useAnimate } from "framer-motion";
+import { useEffect } from "react";
+import { useAnimate } from "framer-motion";
 
 import styles from "@/styles/Modal.module.css";
 
@@ -10,11 +10,36 @@ export default function Modal({ open, onClose, title, children }) {
 
     function openModal(modal) {
         modal.showModal();
-        animate(modal, { opacity: 1, y: 0 }, { duration: 0.2 });
+        animate(
+            modal,
+            { opacity: 1, y: 0 },
+            {
+                duration: 0.2,
+                opacity: {
+                    type: "linear",
+                },
+                y: {
+                    type: "spring",
+                    stiffness: 100,
+                },
+            }
+        );
     }
 
     async function closeModal(modal) {
-        await animate(modal, { opacity: 0, y: -20 }, { duration: 0.2 });
+        await animate(
+            modal,
+            { opacity: 0, y: -20 },
+            {
+                duration: 0.1,
+                opacity: {
+                    type: "linear",
+                },
+                y: {
+                    type: "linear",
+                },
+            }
+        );
         modal.close();
     }
 
