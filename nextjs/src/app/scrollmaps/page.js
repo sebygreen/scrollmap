@@ -1,7 +1,7 @@
 // dependencies
-import { supabase } from "../../lib/supabase";
+import { supabase } from "@/lib/supabase";
 // components
-import Scrollmaps from "../../components/Scrollmaps";
+import Scrollmaps from "@/components/Scrollmaps";
 
 export const revalidate = 3600; // revalidate every hour
 

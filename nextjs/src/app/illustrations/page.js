@@ -1,7 +1,7 @@
 // components
-import Spinner from "../../components/Spinner";
+import Spinner from "@/components/Spinner";
 // styles
-import styles from "../../styles/Illustrations.module.css";
+import styles from "@/styles/Illustrations.module.css";
 
 export const metadata = {
     title: "Illustrations",

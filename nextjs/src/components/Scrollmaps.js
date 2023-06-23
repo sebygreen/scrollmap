@@ -8,8 +8,6 @@ import Button from "./Button";
 import styles from "../styles/Scrollmaps.module.css";
 
 export default function Scrollmaps({ scrollmaps }) {
-    console.log(scrollmaps, "Scrollmaps.js");
-
     // framer-motion
     const containerVariants = {
         hidden: {
