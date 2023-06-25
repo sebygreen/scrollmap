@@ -16,7 +16,7 @@
     color: rgba(255, 255, 255, 1);
 }
 
-.scroll:not(:last-child) {
+.scrollmap:not(:last-child) {
     margin: 0 0 60px 0;
 }
 

@@ -4,15 +4,13 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: "https",
-                hostname: "xdwucvvincboyjolpqnx.supabase.co",
-                port: "",
-                pathname:
-                    "/storage/v1/object/sign/scrollmap-bucket/scrollmaps/**",
+                protocol: "http",
+                hostname: "pocketbase",
+                port: "8090",
+                pathname: "/api/files/scrollmaps/**",
             },
         ],
     },
-    output: "standalone",
 };
 
 module.exports = nextConfig;

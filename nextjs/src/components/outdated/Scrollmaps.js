@@ -1,43 +1,65 @@
+"use client";
 // dependencies
-import PocketBase from "pocketbase";
-// components
-import Link from "next/link";
 import Image from "next/image";
-import Button from "@/components/Button";
-import styles from "@/styles/Scrollmaps.module.css";
+import { motion } from "framer-motion";
+// components
+import Button from "./Button";
+// styles
+import styles from "../styles/Scrollmaps.module.css";
 
-export const metadata = {
-    title: "Scrollmaps",
-};
+export default function Scrollmaps({ scrollmaps }) {
+    // framer-motion
+    const containerVariants = {
+        hidden: {
+            transition: {
+                when: "afterChildren",
+            },
+        },
+        visible: {
+            transition: {
+                staggerChildren: 0.1,
+            },
+        },
+    };
+    const scrollVariants = {
+        hidden: {
+            opacity: 0,
+            y: "-10px",
+            transition: {
+                duration: 0.2,
+                type: "linear",
+                damping: 0,
+                stiffness: 0,
+            },
+        },
+        visible: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                duration: 0.2,
+                type: "linear",
+                damping: 0,
+                stiffness: 0,
+            },
+        },
+    };
 
-async function getScrollmaps() {
-    const pb = new PocketBase("http://pocketbase:8090");
-    try {
-        const records = await pb
-            .collection("scrollmaps")
-            .getFullList({ sort: "+location" });
-        return records;
-    } catch (e) {
-        throw new Error(e);
-    }
-}
-
-export async function generateStaticParams() {
-    var scrollmaps = await getScrollmaps();
-    return scrollmaps.map((scrollmap) => ({
-        slug: scrollmap.slug,
-    }));
-}
-
-export default async function Page() {
-    var scrollmaps = await getScrollmaps();
     return (
-        <section className={styles.content}>
-            {scrollmaps.map((scrollmap) => (
-                <div key={scrollmap.id} className={styles.scrollmap}>
+        <motion.section
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            className={styles.content}
+        >
+            {scrollmaps.map((scroll) => (
+                <motion.div
+                    variants={scrollVariants}
+                    key={scroll.id}
+                    className={styles.scroll}
+                >
                     <div className={styles.info}>
                         <div className={styles.text}>
-                            <h3>{scrollmap.name}</h3>
+                            <h3>{scroll.name}</h3>
                             <div className={styles.metadata}>
                                 <div className={styles.data}>
                                     <svg
@@ -52,7 +74,7 @@ export default async function Page() {
                                         />
                                     </svg>
 
-                                    <p>Version {scrollmap.version}</p>
+                                    <p>Issue {scroll.issue}</p>
                                 </div>
                                 <div className={styles.data}>
                                     <svg
@@ -67,13 +89,13 @@ export default async function Page() {
                                         />
                                     </svg>
 
-                                    <p>{scrollmap.location}</p>
+                                    <p>{scroll.location}</p>
                                 </div>
                             </div>
                         </div>
                         <Button
                             type="link"
-                            href={"/scrollmaps/" + scrollmap.slug}
+                            href={"/scrollmaps/" + scroll.slug}
                             text="Expand"
                             icon={
                                 <svg
@@ -92,15 +114,14 @@ export default async function Page() {
                     </div>
                     <Image
                         className={styles.image}
-                        src={`http://pocketbase:8090/api/files/scrollmaps/${scrollmap.id}/${scrollmap.file}`}
-                        height={scrollmap.height}
-                        width={scrollmap.width}
+                        src={`http://localhost:8090/api/files/scrollmaps/${scroll.id}/${scroll.file}`}
+                        height={scroll.height}
+                        width={scroll.width}
                         quality={70}
-                        alt={scrollmap.name}
-                        priority={true}
+                        alt={scroll.name}
                     />
-                </div>
+                </motion.div>
             ))}
-        </section>
+        </motion.section>
     );
 }

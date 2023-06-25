@@ -14,7 +14,7 @@ export default function Modal({ open, onClose, title, children }) {
             modal,
             { opacity: 1, y: 0 },
             {
-                duration: 0.2,
+                duration: 200,
                 opacity: {
                     type: "linear",
                 },
@@ -31,12 +31,12 @@ export default function Modal({ open, onClose, title, children }) {
             modal,
             { opacity: 0, y: -20 },
             {
-                duration: 0.1,
+                duration: 100,
                 opacity: {
                     type: "linear",
                 },
                 y: {
-                    type: "linear",
+                    type: "tween",
                 },
             }
         );
