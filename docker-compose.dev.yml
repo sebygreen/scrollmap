@@ -8,16 +8,18 @@ services:
         restart: unless-stopped
         ports:
             - 3000:3000
-        env_file: #set envrionment variables based on the .env file
-            - .env.local
         volumes:
             - ./nextjs/src:/app/src
             - ./nextjs/public:/app/public
         depends_on:
             - pocketbase
         networks:
-            - dev
-
+            - internal
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.cal.rule=Host(`scrollmap.smkg.me`)"
+            - "traefik.http.routers.cal.entrypoints=web"
+            - "traefik.http.services.cal.loadbalancer.server.port=3000"
     pocketbase:
         build:
             context: ./pocketbase
@@ -34,7 +36,7 @@ services:
             timeout: 5s
             retries: 5
         networks:
-            - dev
+            - internal
 networks:
-    dev:
+    internal:
         driver: bridge
