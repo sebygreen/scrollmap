@@ -4,8 +4,6 @@ import styles from "@/styles/Scrollmap.module.css";
 import Button from "@/components/Button";
 import Viewer from "@/components/Viewer";
 
-export const revalidate = 3600; // revalidate every hour
-
 async function getScrollmap(slug) {
     const pb = new PocketBase("http://pocketbase:8090");
     try {
@@ -71,7 +69,7 @@ export default async function Page({ params }) {
                                     clipRule="evenodd"
                                 />
                             </svg>
-                            <h2>{scrollmap.location}</h2>
+                            <p>{scrollmap.location}</p>
                         </div>
                         <div className={styles.data}>
                             <svg
@@ -85,10 +83,9 @@ export default async function Page({ params }) {
                                     clipRule="evenodd"
                                 />
                             </svg>
-                            <h2>
-                                {scrollmap.height}px tall &bull;{" "}
-                                {scrollmap.width}px wide
-                            </h2>
+                            <p>
+                                {scrollmap.height} &times; {scrollmap.width}
+                            </p>
                         </div>
                         <div className={styles.data}>
                             <svg
@@ -103,10 +100,10 @@ export default async function Page({ params }) {
                                 />
                             </svg>
 
-                            <h2>Version {scrollmap.version}</h2>
+                            <p>Version {scrollmap.version}</p>
                         </div>
                     </div>
-                    <Viewer scrollmap={scrollmap} />
+                    <Viewer scrollmap={JSON.parse(JSON.stringify(scrollmap))} />
                 </section>
             );
         }
