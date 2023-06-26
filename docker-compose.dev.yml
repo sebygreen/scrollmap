@@ -21,7 +21,7 @@ services:
     pocketbase:
         build:
             context: ./pocketbase
-            dockerfile: dev.Dockerfile
+            dockerfile: Dockerfile
         container_name: pocketbase
         restart: unless-stopped
         ports:
