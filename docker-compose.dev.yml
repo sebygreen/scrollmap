@@ -17,9 +17,9 @@ services:
             - internal
         labels:
             - "traefik.enable=true"
-            - "traefik.http.routers.cal.rule=Host(`scrollmap.smkg.me`)"
-            - "traefik.http.routers.cal.entrypoints=web"
-            - "traefik.http.services.cal.loadbalancer.server.port=3000"
+            - "traefik.http.routers.scrollmap.rule=Host(`scrollmap.smkg.me`)"
+            - "traefik.http.routers.scrollmap.entrypoints=web"
+            - "traefik.http.services.scrollmap.loadbalancer.server.port=3000"
     pocketbase:
         build:
             context: ./pocketbase
