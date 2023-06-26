@@ -7,7 +7,7 @@ services:
         container_name: nextjs
         restart: unless-stopped
         ports:
-            - 3000:3000
+            - 3001:3001
         volumes:
             - ./nextjs/src:/app/src
             - ./nextjs/public:/app/public
@@ -19,7 +19,7 @@ services:
             - "traefik.enable=true"
             - "traefik.http.routers.scrollmap.rule=Host(`scrollmap.smkg.me`)"
             - "traefik.http.routers.scrollmap.entrypoints=web"
-            - "traefik.http.services.scrollmap.loadbalancer.server.port=3000"
+            - "traefik.http.services.scrollmap.loadbalancer.server.port=3001"
     pocketbase:
         build:
             context: ./pocketbase
