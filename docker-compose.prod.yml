@@ -5,9 +5,8 @@ services:
             context: ./nextjs
             dockerfile: Dockerfile
         container_name: nextjs
+        hostname: nextjs
         restart: unless-stopped
-        ports:
-            - 3000:3000
         volumes:
             - ./nextjs/src:/app/src
             - ./nextjs/public:/app/public
@@ -15,16 +14,18 @@ services:
             - pocketbase
         networks:
             - internal
+            - traefik_net
         labels:
             - "traefik.enable=true"
             - "traefik.http.routers.scrollmap.rule=Host(`scrollmap.smkg.me`)"
-            - "traefik.http.routers.scrollmap.entrypoints=web"
-            - "traefik.http.services.scrollmap.loadbalancer.server.port=3001"
+            - "traefik.http.routers.scrollmap.entrypoints=websecure"
+            - "traefik.http.services.scrollmap.loadbalancer.server.port=3000"
     pocketbase:
         build:
             context: ./pocketbase
             dockerfile: Dockerfile
         container_name: pocketbase
+        hostname: pocketbase
         restart: unless-stopped
         ports:
             - 8090:8090
@@ -40,3 +41,5 @@ services:
 networks:
     internal:
         driver: bridge
+    traefik_net:
+        external: true

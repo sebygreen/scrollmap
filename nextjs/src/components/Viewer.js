@@ -15,6 +15,7 @@ export default function Viewer({ scrollmap }) {
                     height={scrollmap.height}
                     width={scrollmap.width}
                     quality={100}
+                    placeholder={blur}
                 />
             </div>
             <div className={styles.tools}>
