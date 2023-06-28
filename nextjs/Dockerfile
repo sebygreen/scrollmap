@@ -8,7 +8,10 @@ WORKDIR /app
 # Install dependencies based on the preferred package manager
 COPY package.json package-lock.json ./
 # Omit --production flag for TypeScript devDependencies
-RUN if [ -f package-lock.json ] then npm ci else echo "Warning: Lockfile not found. It is recommended to commit lockfiles to version control." fi
+RUN \
+    if [ -f package-lock.json ]; then npm ci; \
+    else echo "Lockfile not found." && exit 1; \
+    fi
 
 COPY src ./src
 COPY public ./public
