@@ -3,7 +3,7 @@ services:
     nextjs:
         build:
             context: ./nextjs
-            dockerfile: dev.Dockerfile
+            dockerfile: Dockerfile
         container_name: nextjs
         restart: unless-stopped
         ports:
@@ -15,6 +15,11 @@ services:
             - pocketbase
         networks:
             - internal
+        labels:
+            - "traefik.enable=true"
+            - "traefik.http.routers.scrollmap.rule=Host(`scrollmap.smkg.me`)"
+            - "traefik.http.routers.scrollmap.entrypoints=web"
+            - "traefik.http.services.scrollmap.loadbalancer.server.port=3001"
     pocketbase:
         build:
             context: ./pocketbase
